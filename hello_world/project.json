@@ -1,0 +1,8 @@
+{
+  "name": "ExploreTech-HelloWorld",
+  "description": "Hello World example project for ExploreTech-Toronto",
+  "memory": 128,
+  "timeout": 5,
+  "role": "<!create new lambda function role!>",
+  "environment": {}
+}
