@@ -1,5 +1,4 @@
 from chalice import Chalice
-
 from PIL import Image
 import boto3
 
