@@ -4,7 +4,7 @@ const {DynamoDB} = require('@aws-sdk/client-dynamodb-v2-node');
 async function getQuoteCount() {
   const client = new DynamoDB({region: 'us-east-1'});
   var params = {
-      TableName: "Quote"
+      TableName: "Quotes_funny"
      };
      var data = await client.describeTable(params)
      return data.Table.ItemCount
@@ -19,7 +19,7 @@ async function getQuote(id) {
          S: id
         }
       }, 
-      TableName: "Quote"
+      TableName: "Quotes_funny"
      };
      var data = await client.getItem(params)
 
@@ -32,7 +32,7 @@ async function getQuote(id) {
 
 module.exports.getQuote = async (event, context, callback) => {
   var count = await getQuoteCount();
-  var r = Math.floor(Math.random() * Math.max(count, 2000));
+  var r = Math.floor(Math.random() * Math.max(count, 101));
   var item = await getQuote(r.toString());
 
   const response = {
